@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #f9f9f9;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+select {
+	outline: none;
+}
+
+.toogle {
+	left: 0;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+@media screen and (max-width: 493px) {
+	.toogle {
+		top: 125px;
+	}
+}
+
+.fixed {
+	display: block;
+	display: flex;
+}
+
+@media (max-width: 768px) {
+	.fixed {
+		display: none;
+	}
+}

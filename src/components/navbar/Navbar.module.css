@@ -1,0 +1,291 @@
+nav {
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.3s ease;
+}
+
+.toogle {
+	display: none;
+}
+
+.nav-top {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	background-color: #f0f0f0;
+}
+
+.nav-top-lists {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.location,
+.account {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.location img,
+.account img {
+	width: 20px;
+	cursor: pointer;
+}
+.location select,
+.list-item select {
+	cursor: pointer;
+}
+
+.location select,
+.location select option,
+.list-item,
+.list-item select,
+.account,
+.address,
+.delivery {
+	border: none;
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+@media (max-width: 1286px) {
+	.nav-top {
+		flex-direction: column;
+		gap: 15px;
+	}
+	.nav-top-lists {
+		justify-content: space-between;
+	}
+	.top-left,
+	.top-right {
+		width: 100%;
+	}
+}
+
+.nav-bottom {
+	padding: 16px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a img {
+	width: 141px;
+}
+
+.heart,
+.cart {
+	background-color: #ff7010;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	padding: 8px 16px;
+	border-radius: 4px;
+}
+
+.icons {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.count {
+	font-family: Inter;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 22px;
+	text-align: center;
+	color: white;
+}
+
+.nav-lists {
+	display: none;
+	background-color: white;
+	position: fixed;
+	z-index: 11;
+	bottom: 0;
+	left: -2000px;
+	top: 120px;
+	width: 100%;
+	transition: 0.5s;
+}
+
+.top-list {
+	padding: 10px 0;
+}
+
+.bottom-lists {
+	list-style-type: none;
+	padding: 10px 0;
+}
+
+.bottom-lists li {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+@media (max-width: 492px) {
+	.top-right .nav-top-lists {
+		display: none;
+	}
+	.nav-lists {
+		top: 130px;
+	}
+}
+
+.nav-bottom-lists {
+	list-style-type: none;
+	display: flex;
+	gap: 32px;
+	align-items: center;
+	display: none;
+}
+
+.nav-bottom-lists a,
+.other-links {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.nav-bottom-lists a:hover,
+.other-links:hover {
+	color: #ff7010;
+	transition: 0.3s;
+}
+
+.other-link {
+	position: relative;
+}
+
+@media screen and (max-width: 1320px) {
+	.nav-bottom {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.icons {
+		gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.nav-bottom {
+		flex-direction: row;
+	}
+	.nav-bottom-lists {
+		display: none;
+	}
+	.address,
+	.delivery {
+		display: none;
+	}
+	.heart,
+	.cart {
+		position: fixed;
+		z-index: 10;
+		border-radius: 50%;
+		padding: 5px;
+		height: 40px;
+		width: 40px;
+		gap: 0;
+		border: 1px solid white;
+		justify-content: center;
+	}
+
+	.cart {
+		right: 9.9%;
+		bottom: 30px;
+	}
+	.heart {
+		bottom: 30px;
+		left: 9.9%;
+	}
+
+	.postions {
+		position: relative;
+	}
+
+	.count {
+		position: absolute;
+		top: -27px;
+		right: -14px;
+		background-color: white;
+		color: #ff7010;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		font-size: 12px;
+		text-align: center;
+		border: 1px solid #ff7010;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.toogle {
+		display: block;
+	}
+
+	.close {
+		display: none;
+	}
+	.nav-lists {
+		display: block;
+		top: 140px;
+	}
+}
+
+.other-link {
+	list-style-type: none;
+	background-color: white;
+	padding: 15px;
+	position: absolute;
+	right: 300px;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	display: none;
+}
+
+.other-link li {
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.other-links:hover li {
+	color: black;
+}
+.other-link li:hover {
+	background-color: black;
+	color: white;
+	transition: 0.8s;
+}
+
+
+.other-links:hover .other-link {
+	display: block;
+}
