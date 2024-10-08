@@ -43,8 +43,6 @@ footer {
 	width: 20px;
 }
 
-
-
 .web-site-by {
 	margin-top: 50px;
 	font-family: Inter;
@@ -66,5 +64,9 @@ footer {
 	}
 	.row {
 		align-items: center;
+	}
+
+	.col-3 ul {
+		gap: 10px;
 	}
 }
