@@ -4,11 +4,14 @@ import { IoCart } from 'react-icons/io5'
 import { RiCloseLargeFill, RiListUnordered } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import style from './Navbar.module.css'
+import NavbarLists from './NavbarLists'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
 
 	const [isFixed, setIsFixed] = useState(false)
+
+	const [timeLeft, setTimeLeft] = useState(24 * 60)
 
 	const handleScroll = () => {
 		if (window.scrollY > 134) {
@@ -23,6 +26,24 @@ const Navbar = () => {
 
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
+
+	useEffect(() => {
+		// Har 1 soniyada qayta ishga tushadigan intervalni o'rnatamiz
+		const timer = setInterval(() => {
+			setTimeLeft(prevTime => (prevTime > 0 ? prevTime - 1 : 0))
+		}, 1000)
+
+		// Komponent unmounted bo'lganda intervalni tozalash
+		return () => clearInterval(timer)
+	}, [])
+
+	const formatTime = seconds => {
+		const minutes = Math.floor(seconds / 60)
+		const remainingSeconds = seconds % 60
+		return `${minutes.toString().padStart(2, '0')}:${remainingSeconds
+			.toString()
+			.padStart(2, '0')}`
+	}
 
 	return (
 		<nav>
@@ -43,7 +64,7 @@ const Navbar = () => {
 								Проверить адрес
 							</li>
 							<li className={style[('list-item', 'delivery')]}>
-								Среднее время доставки*: <b>00:24:19</b>{' '}
+								Среднее время доставки*: <b>{formatTime(timeLeft)}</b>{' '}
 							</li>
 							<li className={style['list-item']}>
 								<select>
@@ -104,14 +125,7 @@ const Navbar = () => {
 						<li className={style['other-links']}>
 							Другое ▼
 							<ul className={style['other-link']}>
-								<li>Акции</li>
-								<li>О компании</li>
-								<li>Пользовательское соглашение</li>
-								<li>Условия гарантии</li>
-								<li>Ресторан</li>
-								<li>Контакты</li>
-								<li>Поддержка</li>
-								<li>Отследить заказ</li>
+								<NavbarLists />
 							</ul>
 						</li>
 					</ul>
@@ -161,14 +175,7 @@ const Navbar = () => {
 				<div className={style['line']}></div>
 				<div className='container'>
 					<ul className={style['bottom-lists']}>
-						<li>Акции</li>
-						<li>О компании</li>
-						<li>Пользовательское соглашение</li>
-						<li>Условия гарантии</li>
-						<li>Ресторан</li>
-						<li>Контакты</li>
-						<li>Поддержка</li>
-						<li>Отследить заказ</li>
+						<NavbarLists />
 					</ul>
 				</div>
 			</div>

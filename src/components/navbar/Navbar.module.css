@@ -269,6 +269,7 @@ nav {
 	flex-direction: column;
 	gap: 4px;
 	display: none;
+	border: 0.1px solid #f0f0f0;
 }
 
 .other-link li {
@@ -285,7 +286,10 @@ nav {
 	transition: 0.8s;
 }
 
-
 .other-links:hover .other-link {
 	display: block;
+}
+
+.delivery {
+	width: 235px;
 }
