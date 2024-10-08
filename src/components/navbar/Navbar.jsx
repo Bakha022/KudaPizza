@@ -3,6 +3,7 @@ import { FaRegHeart } from 'react-icons/fa'
 import { IoCart } from 'react-icons/io5'
 import { RiCloseLargeFill, RiListUnordered } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import FooterList from '../footer/FooterList'
 import style from './Navbar.module.css'
 import NavbarLists from './NavbarLists'
 
@@ -177,6 +178,11 @@ const Navbar = () => {
 					<ul className={style['bottom-lists']}>
 						<NavbarLists />
 					</ul>
+				</div>
+				<div className={style['line']}></div>
+				<div className='container'>
+					<h3 className={style['contact-title']}>Контакты</h3>
+					<FooterList />
 				</div>
 			</div>
 		</nav>

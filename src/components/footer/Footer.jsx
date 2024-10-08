@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './Footer.module.css'
+import FooterList from './FooterList'
 
 const Footer = () => {
 	return (
@@ -32,28 +33,7 @@ const Footer = () => {
 					</div>
 					<div className={style['col-3']}>
 						<h3>Контакты</h3>
-						<ul>
-							<li>
-								<img src='/Group 55.svg' alt='phone-icon' />
-								+7 (926) 223-10-11
-							</li>
-							<li>
-								<img src='/Group 5.svg' alt='phone-icon' />
-								Москва, ул. Юных Ленинцев, д.99
-							</li>
-							<li>
-								<div className={style['list-row']}>
-									<li>
-										<img src='/Subtract.svg' alt='phone-icon' />
-										Facebok
-									</li>
-									<li>
-										<img src='/Vector.svg' alt='phone-icon' />
-										Instagram
-									</li>
-								</div>
-							</li>
-						</ul>
+						<FooterList />
 					</div>
 				</div>
 			</div>

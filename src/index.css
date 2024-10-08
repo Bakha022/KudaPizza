@@ -43,3 +43,23 @@ a {
 		display: none;
 	}
 }
+
+.list-row {
+	display: flex;
+	gap: 24px;
+}
+
+.foote-lists {
+	list-style-type: none;
+}
+
+.foote-lists li {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+}

@@ -43,10 +43,7 @@ footer {
 	width: 20px;
 }
 
-.list-row {
-	display: flex;
-	gap: 24px;
-}
+
 
 .web-site-by {
 	margin-top: 50px;
@@ -57,5 +54,17 @@ footer {
 	text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 692px) {
+	.row {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 492px) {
+	.col-3 {
+		width: 250px;
+	}
+	.row {
+		align-items: center;
+	}
 }
