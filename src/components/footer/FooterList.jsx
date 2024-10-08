@@ -2,7 +2,7 @@ import React from 'react'
 
 const FooterList = () => {
 	return (
-		<ul className='foote-lists'>
+		<ul className='footer-lists'>
 			<li>
 				<img src='/Group 55.svg' alt='phone-icon' />
 				+7 (926) 223-10-11

@@ -49,11 +49,11 @@ a {
 	gap: 24px;
 }
 
-.foote-lists {
+.footer-lists {
 	list-style-type: none;
 }
 
-.foote-lists li {
+.footer-lists li {
 	margin-bottom: 10px;
 	display: flex;
 	align-items: center;
@@ -62,4 +62,8 @@ a {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 22px;
+}
+
+.footer-lists li img {
+	width: 20px !important;
 }
