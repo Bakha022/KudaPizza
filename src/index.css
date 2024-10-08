@@ -45,12 +45,17 @@ a {
 }
 
 .list-row {
+	list-style-type: none;
 	display: flex;
 	gap: 24px;
 }
 
 .footer-lists {
+	margin-top: 20px;
 	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 .footer-lists li {
@@ -66,4 +71,41 @@ a {
 
 .footer-lists li img {
 	width: 20px !important;
+}
+
+/* Target the scrollbar track */
+::-webkit-scrollbar {
+	width: 12px; /* Set the width of the scrollbar */
+	height: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar:hover {
+	background: #e1e1e1; /* Change the background color on hover */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background-color: #888; /* Set the color of the scrollbar handle */
+	border-radius: 6px; /* Set the border-radius to round the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555; /* Change the color on handle hover */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: #f1f1f1; /* Set the color of the scrollbar track */
+}
+
+/* Track on hover */
+::-webkit-scrollbar-track:hover {
+	background-color: #ccc; /* Change the color on track hover */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+	background-color: #f1f1f1; /* Set the color of the scrollbar corner (where vertical and horizontal scrollbars meet) */
 }

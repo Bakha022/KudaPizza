@@ -181,7 +181,6 @@ const Navbar = () => {
 				</div>
 				<div className={style['line']}></div>
 				<div className='container'>
-					<h3 className={style['contact-title']}>Контакты</h3>
 					<FooterList />
 				</div>
 			</div>

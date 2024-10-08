@@ -12,7 +12,7 @@ const FooterList = () => {
 				Москва, ул. Юных Ленинцев, д.99
 			</li>
 			<li>
-				<div className={'list-row'}>
+				<ul className='list-row'>
 					<li>
 						<img src='/Subtract.svg' alt='phone-icon' />
 						Facebok
@@ -21,7 +21,7 @@ const FooterList = () => {
 						<img src='/Vector.svg' alt='phone-icon' />
 						Instagram
 					</li>
-				</div>
+				</ul>
 			</li>
 		</ul>
 	)

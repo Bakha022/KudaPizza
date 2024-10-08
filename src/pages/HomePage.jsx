@@ -1,8 +1,13 @@
 import React from 'react'
+import HeroBottom from '../components/hero/HeroBottom'
+import HeroTop from '../components/hero/HeroTop'
 
 const HomePage = () => {
 	return (
-		<div style={{height: '800px', margin: "200px 0",}}>HomePage</div>
+		<div className='container'>
+			<HeroTop />
+			<HeroBottom />
+		</div>
 	)
 }
 

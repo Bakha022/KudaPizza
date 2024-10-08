@@ -20,15 +20,15 @@ footer {
 	line-height: 28px;
 }
 
-.col-3 ul {
+.col-3 .col-lists {
 	list-style-type: none;
-	margin-top: 22px;
+	margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
 
-.col-3 ul li {
+.col-3 .col-lists li {
 	font-family: Inter;
 	font-size: 16px;
 	font-weight: 400;
@@ -39,7 +39,7 @@ footer {
 	gap: 12px;
 }
 
-.col-3 ul li img {
+.col-3 .col-lists li img {
 	width: 20px;
 }
 
@@ -66,7 +66,7 @@ footer {
 		align-items: center;
 	}
 
-	.col-3 ul {
+	.col-3 .col-lists {
 		gap: 10px;
 	}
 }

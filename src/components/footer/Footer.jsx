@@ -17,7 +17,7 @@ const Footer = () => {
 					</div>
 					<div className={style['col-3']}>
 						<h3>Куда пицца</h3>
-						<ul>
+						<ul className={style['col-lists']}>
 							<li>О компании</li>
 							<li>Пользовательское соглашение</li>
 							<li>Условия гарантии</li>
@@ -25,7 +25,7 @@ const Footer = () => {
 					</div>
 					<div className={style['col-3']}>
 						<h3>Помощь</h3>
-						<ul>
+						<ul className={style['col-lists']}>
 							<li>Ресторан</li>
 							<li>Контакты</li>
 							<li>Отследить заказ</li>
