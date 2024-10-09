@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FaRegHeart } from 'react-icons/fa'
 import { IoCart } from 'react-icons/io5'
 import { RiCloseLargeFill, RiListUnordered } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import { LanguageContext } from '../../context/LanguageContext'
 import FooterList from '../footer/FooterList'
 import style from './Navbar.module.css'
 import NavbarLists from './NavbarLists'
+import TimeLeft from './TimeLeft'
 
 const Navbar = () => {
 	const [toogle, setToogle] = useState(false)
 
 	const [isFixed, setIsFixed] = useState(false)
 
-	const [timeLeft, setTimeLeft] = useState(24 * 60)
+	const { lang, setLangType } = useContext(LanguageContext)
 
 	const handleScroll = () => {
 		if (window.scrollY > 134) {
@@ -28,24 +30,6 @@ const Navbar = () => {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
-	useEffect(() => {
-		// Har 1 soniyada qayta ishga tushadigan intervalni o'rnatamiz
-		const timer = setInterval(() => {
-			setTimeLeft(prevTime => (prevTime > 0 ? prevTime - 1 : 0))
-		}, 1000)
-
-		// Komponent unmounted bo'lganda intervalni tozalash
-		return () => clearInterval(timer)
-	}, [])
-
-	const formatTime = seconds => {
-		const minutes = Math.floor(seconds / 60)
-		const remainingSeconds = seconds % 60
-		return `${minutes.toString().padStart(2, '0')}:${remainingSeconds
-			.toString()
-			.padStart(2, '0')}`
-	}
-
 	return (
 		<nav>
 			<div className='container'>
@@ -55,20 +39,23 @@ const Navbar = () => {
 							<li className={style['location']}>
 								<img src='/loacation.svg' alt='loaction-icon' />
 								<select>
-									<option value='moskva'>Москва</option>
-									<option value='perm'>Пермъ</option>
-									<option value='sochi'>Сочи</option>
-									<option value='kazan'>Казанъ</option>
+									<option value='moskva'>{lang.moscow}</option>
+									<option value='perm'>{lang.permian}</option>
+									<option value='sochi'>{lang.sochi}</option>
+									<option value='kazan'>{lang.kazan}</option>
 								</select>
 							</li>
 							<li className={style[('list-item', 'address')]}>
-								Проверить адрес
+								{lang.checkAddress}
 							</li>
 							<li className={style[('list-item', 'delivery')]}>
-								Среднее время доставки*: <b>{formatTime(timeLeft)}</b>{' '}
+								{lang.averageDeliveryTime}* :{' '}
+								<b>
+									<TimeLeft />
+								</b>{' '}
 							</li>
 							<li className={style['list-item']}>
-								<select>
+								<select onChange={e => setLangType(e.target.value)}>
 									<option value='ru'>RU</option>
 									<option value='uz'>UZ</option>
 								</select>
@@ -77,12 +64,10 @@ const Navbar = () => {
 					</div>
 					<div className={style['top-right']}>
 						<ul className={style['nav-top-lists']}>
-							<li className={style['list-item']}>
-								Время работы: с 11:00 до 23:00
-							</li>
+							<li className={style['list-item']}>{lang.openingHours}</li>
 							<li className={style['account']}>
 								<img src='/Group 108.svg' alt='account-icon' />
-								Войти в аккаунт
+								{lang.loginAccount}
 							</li>
 						</ul>
 					</div>
@@ -100,31 +85,31 @@ const Navbar = () => {
 						className={`${style['nav-bottom-lists']} ${isFixed ? 'fixed' : ''}`}
 					>
 						<li>
-							<Link to={'/'}>Акции</Link>
+							<Link to={'/'}>{lang.stock}</Link>
 						</li>
 						<li>
-							<Link to={'/pizza'}>Пицца</Link>
+							<Link to={'/pizza'}>{lang.pizza}</Link>
 						</li>
 						<li>
-							<Link to={'/sushi'}>Суши</Link>
+							<Link to={'/sushi'}>{lang.sushi}</Link>
 						</li>
 						<li>
-							<Link to={'/drinks'}>Напитки</Link>
+							<Link to={'/drinks'}>{lang.beverages}</Link>
 						</li>
 						<li>
-							<Link to={'/snacks'}>Закуски</Link>
+							<Link to={'/snacks'}>{lang.snacks}</Link>
 						</li>
 						<li>
-							<Link to={'/kombo'}>Комбо</Link>
+							<Link to={'/kombo'}>{lang.combo}</Link>
 						</li>
 						<li>
-							<Link to={'/deserts'}>Десерты</Link>
+							<Link to={'/deserts'}>{lang.dessert}</Link>
 						</li>
 						<li>
-							<Link to={'/sauces'}>Соусы</Link>
+							<Link to={'/sauces'}>{lang.sauces}</Link>
 						</li>
 						<li className={style['other-links']}>
-							Другое ▼
+							{lang.other}▼
 							<ul className={style['other-link']}>
 								<NavbarLists />
 							</ul>
@@ -168,7 +153,7 @@ const Navbar = () => {
 						<ul>
 							<li className={style['account']}>
 								<img src='/Group 108.svg' alt='account-icon' />
-								Войти в аккаунт
+								{lang.loginAccount}
 							</li>
 						</ul>
 					</div>

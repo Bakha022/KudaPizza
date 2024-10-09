@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const FooterList = () => {
+	const { lang } = useContext(LanguageContext)
+
 	return (
 		<ul className='footer-lists'>
 			<li>
@@ -9,13 +12,13 @@ const FooterList = () => {
 			</li>
 			<li>
 				<img src='/Group 5.svg' alt='phone-icon' />
-				Москва, ул. Юных Ленинцев, д.99
+				{lang.location}
 			</li>
 			<li>
 				<ul className='list-row'>
 					<li>
 						<img src='/Subtract.svg' alt='phone-icon' />
-						Facebok
+						Facebook
 					</li>
 					<li>
 						<img src='/Vector.svg' alt='phone-icon' />

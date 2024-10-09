@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LanguageContext } from '../../context/LanguageContext'
 
 const NavbarLists = () => {
+	const { lang } = useContext(LanguageContext)
 	return (
 		<>
-			<li>Акции</li>
-			<li>О компании</li>
-			<li>Пользовательское соглашение</li>
-			<li>Условия гарантии</li>
-			<li>Ресторан</li>
-			<li>Контакты</li>
-			<li>Поддержка</li>
-			<li>Отследить заказ</li>
+			<li>{lang.stock}</li>
+			<li>{lang.aboutCompany}</li>
+			<li>{lang.termsOfUse}</li>
+			<li>{lang.warrantTterms}</li>
+			<li>{lang.restaurant}</li>
+			<li>{lang.contacts}</li>
+			<li>{lang.support}</li>
+			<li>{lang.trackYourOrder}</li>
 		</>
 	)
 }
