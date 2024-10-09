@@ -103,25 +103,25 @@ const Navbar = () => {
 							<Link to={'/'}>Акции</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Пицца</Link>
+							<Link to={'/pizza'}>Пицца</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Суши</Link>
+							<Link to={'/sushi'}>Суши</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Напитки</Link>
+							<Link to={'/drinks'}>Напитки</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Закуски</Link>
+							<Link to={'/snacks'}>Закуски</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Комбо</Link>
+							<Link to={'/kombo'}>Комбо</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Десерты</Link>
+							<Link to={'/deserts'}>Десерты</Link>
 						</li>
 						<li>
-							<Link to={'/'}>Соусы</Link>
+							<Link to={'/sauces'}>Соусы</Link>
 						</li>
 						<li className={style['other-links']}>
 							Другое ▼

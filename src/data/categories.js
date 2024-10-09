@@ -15,7 +15,7 @@ export const categories = [
 		image: '/categories/sushi.svg',
 	},
 	{
-		path: '/souses',
+		path: '/sauces',
 		name: 'Соусы',
 		image: '/categories/sauce.svg',
 	},

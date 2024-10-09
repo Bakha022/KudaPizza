@@ -5,7 +5,7 @@ import style from './Hero.module.css'
 import HeroLinks from './HeroLinks'
 const HeroTop = () => {
 	return (
-		<div className={style['top']}>
+		<div className='top'>
 			<div className={style['row']}>
 				<Link to={'/'}>
 					<div className={style['box']}>

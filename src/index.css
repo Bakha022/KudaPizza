@@ -6,6 +6,34 @@
 	box-sizing: border-box;
 }
 
+.top {
+	margin-top: 150px;
+}
+
+@media (max-width: 1321px) {
+	.top {
+		margin-top: 200px;
+	}
+}
+
+@media (max-width: 1286px) {
+	.top {
+		margin-top: 230px;
+	}
+}
+
+@media (max-width: 768px) {
+	.top {
+		margin-top: 190px;
+	}
+}
+
+@media (max-width: 492px) {
+	.top {
+		margin-top: 160px;
+	}
+}
+
 body {
 	background: #f9f9f9;
 }
@@ -72,6 +100,8 @@ a {
 .footer-lists li img {
 	width: 20px !important;
 }
+
+
 
 /* Target the scrollbar track */
 ::-webkit-scrollbar {
