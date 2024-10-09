@@ -1,10 +1,5 @@
 export const categories = [
 	{
-		path: '/',
-		name: 'Акции',
-		image: '/categories/Group 96.svg',
-	},
-	{
 		path: '/pizza',
 		name: 'Пицца',
 		image: '/categories/pizza.svg',
