@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+img {
+	user-select: none;
+}
+
 .top {
 	margin-top: 150px;
 }
@@ -100,8 +104,6 @@ a {
 .footer-lists li img {
 	width: 20px !important;
 }
-
-
 
 /* Target the scrollbar track */
 ::-webkit-scrollbar {

@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import CartPage from './pages/CartPage'
 import DesertsPage from './pages/DeserstsPage'
 import DrinksPage from './pages/DrinksPage'
+import HaertPage from './pages/HeartPage'
 import HomePage from './pages/HomePage'
 import KomboPage from './pages/KomboPage'
 import PizzaPage from './pages/PizzaPage'
@@ -18,6 +19,7 @@ const App = () => {
 				<Route element={<Layout />}>
 					<Route path='/' element={<HomePage />} />
 					<Route path='/cart' element={<CartPage />} />
+					<Route path='/heart' element={<HaertPage />} />
 
 					<Route path='/pizza' element={<PizzaPage />} />
 					<Route path='/sushi' element={<SushiPage />} />

@@ -131,13 +131,13 @@ const Navbar = () => {
 						</li>
 					</ul>
 					<div className={style['icons']}>
-						<div className={style['heart']}>
+						<Link to={'/heart'} className={style['heart']}>
 							<FaRegHeart size={24} color='white' />
 							<div className={style['postions']}>
 								<span className={style['count']}>0</span>
 							</div>
-						</div>
-						<Link className={style['cart']}>
+						</Link>
+						<Link to={'/cart'} className={style['cart']}>
 							<IoCart size={24} color='white	' />
 							<div className={style['postions']}>
 								<span className={style['count']}>0</span>

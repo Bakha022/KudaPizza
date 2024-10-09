@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { toast } from 'react-toastify'
 import style from './Product.module.css'
 
 const ProductCards = ({
@@ -16,6 +17,11 @@ const ProductCards = ({
 	const handleHeart = e => {
 		setHeartShow(!heartShow)
 		e.stopPropagation()
+		if (heartShow) {
+			toast.info("Mahsulotlar sevimlilar bo'limidan olib tashlandi")
+		} else {
+			toast.success("Mahsulotlar sevimlilar bo'limiga qo'shildi")
+		}
 	}
 	return (
 		<div className={style['product-card']}>
