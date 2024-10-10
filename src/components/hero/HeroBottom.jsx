@@ -1,6 +1,7 @@
 import React from 'react'
 import AdvertisingList from './AdvertisingList'
 import style from './Hero.module.css'
+
 import HeroForm from './HeroForm'
 const HeroBottom = () => {
 	const advertising = [

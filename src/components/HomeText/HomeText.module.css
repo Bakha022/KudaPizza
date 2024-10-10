@@ -1,0 +1,48 @@
+.home-text-section {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+
+.text-title {
+	font-family: Inter;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 40px;
+	margin-bottom: 16px;
+}
+
+.text-description {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	margin-bottom: 16px;
+}
+
+.description-title {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 22px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+}
+
+.text-description {
+	height: 150px;
+	overflow-y: hidden;
+}
+
+
+
+.show-btn {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #ff7010;
+	border: none;
+	background: none;
+	cursor: pointer;
+}

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+
 import style from './Hero.module.css'
 
 const HeroLinks = ({ name, image, path }) => {
@@ -7,7 +9,7 @@ const HeroLinks = ({ name, image, path }) => {
 		<Link to={path}>
 			<div className={style['box']}>
 				<div className={style['box-img']}>
-					<img src={image} alt='categories-img' />
+					<LazyLoadImage src={image} alt='categories-img' effect ='blur' />
 				</div>
 				<p className={style['subtitle']}>{name}</p>
 			</div>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { toast } from 'react-toastify'
+import { LanguageContext } from '../../context/LanguageContext'
 import style from './Product.module.css'
 
 const ProductCards = ({
@@ -14,6 +16,7 @@ const ProductCards = ({
 	discount,
 }) => {
 	const [heartShow, setHeartShow] = useState(false)
+	const { lang } = useContext(LanguageContext)
 	const handleHeart = e => {
 		setHeartShow(!heartShow)
 		e.stopPropagation()
@@ -51,13 +54,13 @@ const ProductCards = ({
 						onClick={handleHeart}
 					/>
 				</div>
-				<img src={image} alt='product-item-img' />
+				<LazyLoadImage alt='product-item-img' effect='blur' src={image} />
 			</div>
 			<div className={style['card-title']}>
 				<h3>{name}</h3>
 				<p className={style['text']}>{description}</p>
 				<div className={style['card-bottom']}>
-					<button>Выбрать</button>
+					<button>{lang.addToCart}</button>
 					<p className={style['counter']}>от {price} ₽</p>
 				</div>
 			</div>

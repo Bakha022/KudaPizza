@@ -46,6 +46,8 @@
 	border-radius: 12px;
 	margin-bottom: 30px;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
 .product-item-img {
