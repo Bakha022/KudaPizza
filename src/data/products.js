@@ -244,7 +244,7 @@ export const products = [
 	{
 		id: 'Snacks-2',
 		category: 'Закуски',
-		filter: 'Xit',
+		filter: 'Хит',
 		image: '/products/snacks/snack-img-2.png',
 		name: 'Филадельфия крем-брюле',
 		description:
