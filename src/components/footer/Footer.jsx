@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { LanguageContext } from '../../context/LanguageContext'
 import style from './Footer.module.css'
 import FooterList from './FooterList'
 
 const Footer = () => {
+	const { lang } = useContext(LanguageContext)
 	return (
 		<footer>
 			<div className='container'>
@@ -18,21 +20,21 @@ const Footer = () => {
 					<div className={style['col-3']}>
 						<h3>Куда пицца</h3>
 						<ul className={style['col-lists']}>
-							<li>О компании</li>
-							<li>Пользовательское соглашение</li>
-							<li>Условия гарантии</li>
+							<li>{lang.aboutCompany}</li>
+							<li>{lang.termsOfUse}</li>
+							<li>{lang.warrantTterms}</li>
 						</ul>
 					</div>
 					<div className={style['col-3']}>
-						<h3>Помощь</h3>
+						<h3>{lang.Help}</h3>
 						<ul className={style['col-lists']}>
-							<li>Ресторан</li>
-							<li>Контакты</li>
-							<li>Отследить заказ</li>
+							<li>{lang.restaurant}</li>
+							<li>{lang.contacts}</li>
+							<li>{lang.trackYourOrder}</li>
 						</ul>
 					</div>
 					<div className={style['col-3']}>
-						<h3>Контакты</h3>
+						<h3>{lang.contacts}</h3>
 						<FooterList />
 					</div>
 				</div>

@@ -168,7 +168,7 @@ export const products = [
 	{
 		id: 'sushi-2',
 		category: 'Суши',
-		filter: 'Xit',
+		filter: 'Хит',
 		image: '/products/sushi/sushi-img-2.png',
 		name: 'Филадельфия крем-брюле',
 		description:
@@ -324,7 +324,7 @@ export const products = [
 		name: 'Филадельфия крем-брюле',
 		description:
 			'Сливочный сыр, семга татаки с тростниковым сахаром, соус у...',
-		filter: 'ХИТ',
+		filter: 'Хит',
 		price: 395,
 	},
 	{
@@ -469,7 +469,7 @@ export const products = [
 	{
 		id: 'sauce-2',
 		category: 'Соусы',
-		filter: 'ХИТ',
+		filter: 'Хит',
 		image: '/products/sauces/sauce-img-2.png',
 		name: 'Филадельфия крем-брюле',
 		description: '',

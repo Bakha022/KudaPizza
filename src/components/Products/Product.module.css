@@ -46,8 +46,7 @@
 	border-radius: 12px;
 	margin-bottom: 30px;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+	background-color: white;
 }
 
 .product-item-img {
@@ -64,6 +63,7 @@
 	position: absolute;
 	top: 20px;
 	left: 0;
+	z-index: 5;
 	padding: 7px 16px;
 	border-top-right-radius: 8px;
 	border-bottom-right-radius: 8px;
@@ -82,8 +82,8 @@
 	position: absolute;
 	right: -30px;
 	transition: 0.3s;
-
 	top: 20px;
+	z-index: 10;
 }
 
 .product-card:hover .icon-section {
