@@ -14,7 +14,7 @@ const Navbar = () => {
 
 	const [isFixed, setIsFixed] = useState(false)
 
-	const { lang, setLangType } = useContext(LanguageContext)
+	const { lang, langType, handleLang } = useContext(LanguageContext)
 
 	const handleScroll = () => {
 		if (window.scrollY > 134) {
@@ -55,7 +55,7 @@ const Navbar = () => {
 								</b>{' '}
 							</li>
 							<li className={style['list-item']}>
-								<select onChange={e => setLangType(e.target.value)}>
+								<select value={langType} onChange={handleLang}>
 									<option value='ru'>RU</option>
 									<option value='uz'>UZ</option>
 								</select>

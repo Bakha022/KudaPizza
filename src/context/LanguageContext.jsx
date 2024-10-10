@@ -4,9 +4,17 @@ import languages from '../data/languages'
 export const LanguageContext = createContext()
 
 const LanguageContextProvider = ({ children }) => {
-	const [langType, setLangType] = useState('ru')
+	const [langType, setLangType] = useState(
+		localStorage.getItem('languages') || 'ru'
+	)
 
-	const state = { langType, lang: languages[langType], setLangType }
+	const handleLang = e => {
+		setLangType(e.target.value)
+
+		localStorage.setItem('languages', e.target.value)
+	}
+
+	const state = { langType, lang: languages[langType], handleLang }
 
 	return (
 		<LanguageContext.Provider value={state}>
