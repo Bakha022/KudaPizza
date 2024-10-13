@@ -1,17 +1,23 @@
 import React, { useContext } from 'react'
+import CartEmpty from '../components/Cart/CartEmpty'
+import CartItem from '../components/Cart/CartItem'
+import CartTitle from '../components/Cart/CartTitle'
 import { ProductContext } from '../context/ProductContext'
 const CartPage = () => {
 	const { cart } = useContext(ProductContext)
-	console.log(cart)
 
 	return (
 		<div className='container'>
 			<div className='top'>
 				<div className='container'>
-					<div className='cart-title'>Ваш заказ</div>
-					<div className="row-cols">
-							
-					</div>
+					<CartTitle />
+					<>
+						{cart.length ? (
+							cart?.map((item, index) => <CartItem key={index} {...item} />)
+						) : (
+							<CartEmpty />
+						)}
+					</>
 				</div>
 			</div>
 		</div>
