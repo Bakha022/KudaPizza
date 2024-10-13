@@ -22,7 +22,8 @@
 
 .cards,
 .cart-texts,
-.right {
+.right,
+.code {
 	display: flex;
 	align-items: center;
 }
@@ -61,7 +62,151 @@
 	line-height: 22px;
 	color: #191919;
 }
-.empty {
+.empty img {
 	width: 100%;
 	text-align: center;
+}
+
+@media (max-width: 900px) {
+	.cart-texts {
+		flex-direction: column;
+		align-items: start;
+		gap: 20px;
+		justify-content: space-between;
+	}
+}
+
+@media (max-width: 641px) {
+	.cart-title {
+		font-size: 30px;
+	}
+	.cards {
+		align-items: start;
+	}
+	.price {
+		width: auto;
+	}
+	.right {
+		width: 100%;
+		justify-content: space-between;
+		gap: 5px;
+	}
+
+	.left h1,
+	.price {
+		font-size: 18px;
+	}
+
+	.left p {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 531px) {
+	.cart-title {
+		font-size: 20px;
+	}
+	.cards {
+		flex-direction: column;
+		gap: 20px;
+		align-items: center;
+	}
+
+	.left h1,
+	.price {
+		font-size: 17px;
+	}
+
+	.left p {
+		font-size: 13px;
+	}
+}
+
+.code {
+	padding: 16px 24px;
+	background-color: white;
+	border-radius: 8px;
+	border: 1px solid #f0f0f0;
+	justify-content: space-between;
+}
+
+.code-left {
+	display: flex;
+	align-items: center;
+	border: 1px solid #f0f0f0;
+	border-radius: 6px;
+}
+
+.code-left input {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	color: #a5a5a5;
+	background: none;
+	border: none;
+	padding: 13px 16px;
+}
+
+.code-left button {
+	width: 48px;
+	height: 48px;
+	padding: 15px;
+	border: none;
+	border-radius: 6px;
+	background-color: #ff7010;
+	text-align: center;
+}
+
+.code-left button img {
+	width: 100%;
+}
+
+.code-right {
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 28px;
+	color: #ff7010;
+}
+
+@media (max-width: 800px) {
+	.code {
+		width: 100%;
+		flex-direction: column;
+		gap: 16px;
+	}
+}
+
+@media (max-width: 500px) {
+	.code-left {
+		flex-direction: column;
+		gap: 5px;
+		padding: 16px;
+	}
+
+	.code-left button {
+		width: 100%;
+	}
+
+	.code-left button img {
+		width: 25px;
+	}
+}
+
+@media (max-width: 467px) {
+	.code-left {
+		padding: 14px;
+	}
+
+	.code-left input {
+		width: 100%;
+	}
+	.code-left button img {
+		width: 25px;
+	}
+
+	.code-left {
+		font-size: 18px;
+	}
 }

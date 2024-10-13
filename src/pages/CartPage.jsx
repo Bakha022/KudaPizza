@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import CartCode from '../components/Cart/CartCode'
 import CartEmpty from '../components/Cart/CartEmpty'
 import CartItem from '../components/Cart/CartItem'
 import CartTitle from '../components/Cart/CartTitle'
@@ -18,6 +19,7 @@ const CartPage = () => {
 							<CartEmpty />
 						)}
 					</>
+					<CartCode />
 				</div>
 			</div>
 		</div>
