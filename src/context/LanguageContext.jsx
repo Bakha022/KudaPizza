@@ -10,7 +10,6 @@ const LanguageContextProvider = ({ children }) => {
 
 	const handleLang = e => {
 		setLangType(e.target.value)
-
 		localStorage.setItem('languages', e.target.value)
 	}
 

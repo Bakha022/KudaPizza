@@ -1,0 +1,55 @@
+.count-btns {
+	display: flex;
+	align-items: center;
+}
+
+.decrease-btn,
+.counter-text,
+.increase-btn {
+	padding: 8px;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	text-align: center;
+	background-color: #ffeee2;
+	border: none;
+	color: #ff7010;
+	border-top: 0.3px solid #f8630015;
+	border-bottom: 0.3px solid #f8630015;
+}
+
+.decrease-btn,
+.increase-btn {
+	cursor: pointer;
+}
+
+.counter-text {
+	border-left: 0.3px solid #f8630015;
+	border-right: 0.3px solid #f8630015;
+}
+
+.decrease-btn {
+	border-left: 0.3px solid #f8630015;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.increase-btn {
+	border-right: 0.3px solid #f8630015;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+@media (max-width: 616px) {
+	.count-btns {
+		margin-bottom: 8px;
+	}
+}
+
+
+
+.decrease-btn:active,
+.increase-btn:active {
+	background-color: #f5decd;
+}

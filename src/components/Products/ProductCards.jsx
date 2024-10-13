@@ -1,31 +1,16 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { toast } from 'react-toastify'
 import { LanguageContext } from '../../context/LanguageContext'
+import { ProductContext } from '../../context/ProductContext'
+import Button from '../Button/Button'
 import style from './Product.module.css'
 
-const ProductCards = ({
-	id,
-	category,
-	filter,
-	image,
-	name,
-	description,
-	price,
-	discount,
-}) => {
-	const [heartShow, setHeartShow] = useState(false)
+const ProductCards = ({ id, filter, image, name, description, price }) => {
 	const { lang } = useContext(LanguageContext)
-	const handleHeart = e => {
-		setHeartShow(!heartShow)
-		e.stopPropagation()
-		if (heartShow) {
-			toast.info("Mahsulotlar sevimlilar bo'limidan olib tashlandi")
-		} else {
-			toast.success("Mahsulotlar sevimlilar bo'limiga qo'shildi")
-		}
-	}
+	const { addedCart, cart, handleHeart, heartShow } = useContext(ProductContext)
+	const productInCart = cart.find(pr => pr.id == id)
+
 	return (
 		<div className={style['product-card']}>
 			<div className={style['product-item-img']}>
@@ -57,11 +42,25 @@ const ProductCards = ({
 				<LazyLoadImage alt='product-item-img' effect='blur' src={image} />
 			</div>
 			<div className={style['card-title']}>
-				<h3>{name}</h3>
-				<p className={style['text']}>{description}</p>
-				<div className={style['card-bottom']}>
-					<button>{lang.addToCart}</button>
-					<p className={style['counter']}>от {price} ₽</p>
+				<div
+					style={description ? { height: '198px' } : { height: 'auto' }}
+					className={style['wrapper']}
+				>
+					<h3>{name}</h3>
+					<p className={style['text']}>{description}</p>
+					<div className={style['card-bottom']}>
+						{productInCart ? (
+							<Button id={id} />
+						) : (
+							<button
+								className={style['add-cart']}
+								onClick={() => addedCart(id)}
+							>
+								{lang.addToCart}
+							</button>
+						)}
+						<p className={style['counter']}>от {price} ₽</p>
+					</div>
 				</div>
 			</div>
 		</div>

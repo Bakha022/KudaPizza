@@ -4,6 +4,7 @@ import { IoCart } from 'react-icons/io5'
 import { RiCloseLargeFill, RiListUnordered } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { LanguageContext } from '../../context/LanguageContext'
+import { ProductContext } from '../../context/ProductContext'
 import FooterList from '../footer/FooterList'
 import style from './Navbar.module.css'
 import NavbarLists from './NavbarLists'
@@ -15,6 +16,7 @@ const Navbar = () => {
 	const [isFixed, setIsFixed] = useState(false)
 
 	const { lang, langType, handleLang } = useContext(LanguageContext)
+	const { cart } = useContext(ProductContext)
 
 	const handleScroll = () => {
 		if (window.scrollY > 134) {
@@ -125,7 +127,7 @@ const Navbar = () => {
 						<Link to={'/cart'} className={style['cart']}>
 							<IoCart size={24} color='white	' />
 							<div className={style['postions']}>
-								<span className={style['count']}>0</span>
+								<span className={style['count']}>{cart.length}</span>
 							</div>
 						</Link>
 

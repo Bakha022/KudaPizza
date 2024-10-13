@@ -41,7 +41,7 @@
 }
 
 .product-card {
-	width: 280px;
+	width: 290px;
 	border: 1px solid #f0f0f0;
 	border-radius: 12px;
 	margin-bottom: 30px;
@@ -90,6 +90,12 @@
 	transition: 0.3s;
 	right: 10px;
 }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 .card-title {
 	padding: 20px;
 }
@@ -109,7 +115,6 @@
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 22px;
-	margin-bottom: 16px;
 }
 
 .card-bottom {
@@ -118,7 +123,7 @@
 	justify-content: space-between;
 }
 
-.card-bottom button {
+.add-cart {
 	background: #ff7010;
 	border: none;
 	color: white;

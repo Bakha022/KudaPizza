@@ -52,6 +52,8 @@ const RU = {
 	unFavourite: 'товар удален из избранного',
 	yourLikedProducts: 'Избранные продукты',
 	Checkout: 'Оформить заказ',
+	successfuly: 'Товар успешно добавлен',
+	deletedCart: 'Товар успешно удален из корзины.',
 }
 
 export default RU
