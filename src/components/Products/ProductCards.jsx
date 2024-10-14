@@ -8,8 +8,10 @@ import style from './Product.module.css'
 
 const ProductCards = ({ id, filter, image, name, description, price }) => {
 	const { lang } = useContext(LanguageContext)
-	const { addedCart, cart, handleHeart, heartShow } = useContext(ProductContext)
+	const { cart, like, addedCart, addedLike, removedLike } =
+		useContext(ProductContext)
 	const productInCart = cart.find(pr => pr.id == id)
+	const productInLike = like.find(pr => pr.id == id)
 
 	return (
 		<div className={style['product-card']}>
@@ -24,19 +26,19 @@ const ProductCards = ({ id, filter, image, name, description, price }) => {
 						color='red'
 						style={{
 							cursor: 'pointer',
-							display: `${heartShow ? 'none' : 'block'}`,
+							display: `${productInLike ? 'none' : 'block'}`,
 						}}
 						size={26}
-						onClick={handleHeart}
+						onClick={() => addedLike(id)}
 					/>
 					<FaHeart
 						color='red'
 						style={{
 							cursor: 'pointer',
-							display: `${heartShow == false ? 'none' : 'block'}`,
+							display: `${productInLike ? 'block' : 'none'}`,
 						}}
 						size={26}
-						onClick={handleHeart}
+						onClick={() => removedLike(id)}
 					/>
 				</div>
 				<LazyLoadImage alt='product-item-img' effect='blur' src={image} />

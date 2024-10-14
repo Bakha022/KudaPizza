@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
-import { LanguageContext } from '../../context/LanguageContext'
-import { ProductContext } from '../../context/ProductContext'
+import React from 'react'
+
 import style from './Cart.module.css'
-const CartTitle = () => {
-	const { lang } = useContext(LanguageContext)
-	const { cart } = useContext(ProductContext)
+const CartTitle = ({ title, arr }) => {
 	return (
 		<div className={style['cart-title']}>
-			{lang.yourOrder} ({cart.length})
+			{title} ({arr.length})
 		</div>
 	)
 }

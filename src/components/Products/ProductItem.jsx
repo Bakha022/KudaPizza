@@ -4,8 +4,6 @@ import style from './Product.module.css'
 import ProductCards from './ProductCards'
 
 const ProductItem = ({ name }) => {
-	// console.log(products)
-
 	return (
 		<>
 			<div className={style['product-titles']}>

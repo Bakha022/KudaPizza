@@ -53,6 +53,9 @@
 	z-index: -5;
 }
 
+.card-img span {
+	width: 100%;
+}
 .card-img span img {
 	width: 100%;
 }

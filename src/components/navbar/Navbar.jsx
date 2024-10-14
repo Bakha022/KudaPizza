@@ -16,7 +16,7 @@ const Navbar = () => {
 	const [isFixed, setIsFixed] = useState(false)
 
 	const { lang, langType, handleLang } = useContext(LanguageContext)
-	const { cart } = useContext(ProductContext)
+	const { cart, like } = useContext(ProductContext)
 
 	const handleScroll = () => {
 		if (window.scrollY > 134) {
@@ -121,7 +121,7 @@ const Navbar = () => {
 						<Link to={'/heart'} className={style['heart']}>
 							<FaRegHeart size={24} color='white' />
 							<div className={style['postions']}>
-								<span className={style['count']}>0</span>
+								<span className={style['count']}>{like.length}</span>
 							</div>
 						</Link>
 						<Link to={'/cart'} className={style['cart']}>

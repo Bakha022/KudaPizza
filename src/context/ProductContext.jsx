@@ -9,7 +9,9 @@ const ProductContextProvider = ({ children }) => {
 	const [cart, setCart] = useState(
 		JSON.parse(localStorage.getItem('cart')) || []
 	)
-	const [heartShow, setHeartShow] = useState(false)
+	const [like, setLike] = useState(
+		JSON.parse(localStorage.getItem('like')) || []
+	)
 
 	const { lang } = useContext(LanguageContext)
 	const controlQuantity = (mark, id) => {
@@ -36,21 +38,11 @@ const ProductContextProvider = ({ children }) => {
 		localStorage.setItem('cart', JSON.stringify(newCart))
 		toast.success(lang.successfuly)
 	}
-
-	const handleHeart = () => {
-		if (heartShow) {
-			toast.info(lang.unFavourite)
-		} else {
-			toast.success(lang.favourite)
-		}
-	}
-
 	const increase = id => {
 		let newCart = controlQuantity('+', id)
 		setCart(newCart)
 		localStorage.setItem('cart', JSON.stringify(newCart))
 	}
-
 	const decrease = id => {
 		let newCart
 		let productInCart = cart.find(pr => pr.id == id)
@@ -64,8 +56,30 @@ const ProductContextProvider = ({ children }) => {
 		localStorage.setItem('cart', JSON.stringify(newCart))
 	}
 
-	const state = { cart, addedCart, handleHeart, heartShow, increase, decrease }
+	const addedLike = id => {
+		let productLike = products.find(pr => pr.id == id)
+		let newLike = [...like, productLike]
+		toast.success(lang.favourite)
+		setLike(newLike)
+		localStorage.setItem('like', JSON.stringify(newLike))
+	}
 
+	const removedLike = id => {
+		const newLike = like.filter(item => item.id !== id)
+		setLike(newLike)
+		toast.error(lang.unFavourite)
+		localStorage.setItem('like', JSON.stringify(newLike))
+	}
+
+	const state = {
+		cart,
+		like,
+		addedCart,
+		addedLike,
+		increase,
+		decrease,
+		removedLike,
+	}
 	return (
 		<ProductContext.Provider value={state}>{children}</ProductContext.Provider>
 	)
