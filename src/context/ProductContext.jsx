@@ -14,6 +14,7 @@ const ProductContextProvider = ({ children }) => {
 	)
 
 	const { lang } = useContext(LanguageContext)
+	
 	const controlQuantity = (mark, id) => {
 		let newCart = cart.map(pr => {
 			if (pr.id == id) {
